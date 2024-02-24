@@ -1,1 +1,11 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-1:767397887520:task-definition/ecs-blue-green:5"
+        LoadBalancerInfo:
+          ContainerName: "ecs-blue-green"
+          ContainerPort: 80
+        PlatformVersion: "LATEST"
 
